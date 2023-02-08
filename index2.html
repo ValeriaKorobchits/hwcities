@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tours</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="https://jqueryui.com//resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+ 
+
+    <link rel="stylesheet" href="style2.css">
+    <script>
+     $( function() {
+      $( "#dialog, #d" ).dialog({
+        autoOpen: false
+      });
+      $("#btn1, #btn2").button().click(function(e){
+            var target = this.id == "btn1" ? "#dialog" : "#d";
+            if ($(target).dialog("isOpen")) {
+                $(target).dialog("close")
+            } else{
+                $(target).dialog("open")
+            }
+        })
+     } );
+
+     $( function() {
+          $( "#tabs" ).tabs({
+            collapsible: true
+          });
+        } );
+        
+     </script>
+</head>
+<body ng-app>
+    <header class="flex-h">
+     <img src="img/icon_map.png" alt="">
+     <h1>The World’s Most Visited Cities</h1>
+   
+    <div id="dialog" title="Contact">
+        <p>+380 50 123 45 67</p>
+    </div>
+    <div id="btn1" class="contact">
+       Контакти
+    </div>
+</header>
+<form action="#">
+    <h2 class="choose">On our website you can find out,</h2>
+    <h2 class="choose2" style="margin-bottom: 25px;">which countries are the most visited by tourists of all time!</h2>
+    <hr style="border: 1px solid rgb(174, 221, 225);">
+    <h2 class="choose3" style="margin-top: 25px;">Choose one to see detailed information:</h2>
+    <div class="cities" style="margin-bottom: 25px;">
+    <input style="margin-right: 7px;" type="radio" ng-model="info" value="bangkok"> Bangkok
+    <input style="margin-right: 7px;" type="radio" ng-model="info" value="paris"> Paris
+    <input style="margin-right: 7px;" type="radio" ng-model="info" value="london"> London
+    <input style="margin-right: 7px;" type="radio" ng-model="info" value="dubai"> Dubai
+    <input style="margin-right: 7px;" type="radio" type="radio" ng-model="info" value="singapore"> Singapore
+    </div>
+</form>
+<div ng-switch="info">
+    <div ng-switch-when="bangkok">
+        <h2 style="margin-left: 730px; color: rgb(58, 109, 116);">Bangkok</h2>
+        <h3 style="display: flex; justify-content: center; color: rgb(77, 144, 154);">Total International Visitors: 22.78 Million Visitors</h3>
+        <p style="margin-left: 100px; margin-right: 100px;">Bangkok, officially known in Thai as Krung Thep Maha Nakhon and colloquially as Krung Thep, is the capital and most populous city of Thailand. The city occupies 1,568.7 square kilometres in the Chao Phraya River delta in central Thailand and has an estimated population of 10.539 million as of 2020, 15.3 percent of the country's population. Over 14 million people lived within the surrounding Bangkok Metropolitan Region at the 2010 census, making Bangkok an extreme primate city, dwarfing Thailand's other urban centres in both size and importance to the national economy.</p>
+
+        <img style="border: 1px solid black; margin-left: 450px; margin-top: 20px;" width="600"src="https://imageio.forbes.com/specials-images/imageserve/62baf0bb91f8ba58ef4a638a/Sunrise-with-Grand-Palace-of-Bangkok--Thailand/960x0.jpg?format=jpg&width=960" alt="">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <div ng-switch-when="paris">
+        <h2 style="margin-left: 730px; color: rgb(58, 109, 116);">Paris</h2>
+        <h3 style="display: flex; justify-content: center; color: rgb(77, 144, 154);">Total International Visitors: 19.10 Million Visitors</h3>
+        <p style="margin-left: 100px; margin-right: 100px;">Paris is the capital and most populous city of France, with an estimated population of 2,165,423 residents in 2019 in an area of more than 105 km², making it the 30th most densely populated city in the world in 2020. Since the 17th century, Paris has been one of the world's major centres of finance, diplomacy, commerce, fashion, gastronomy, and science. For its leading role in the arts and sciences, as well as its very early system of street lighting, in the 19th century it became known as "the City of Light". Like London, prior to the Second World War, it was also sometimes called the capital of the world.</p>
+        <img style="border: 1px solid black; margin-left: 450px; margin-top: 20px;" width="600"src="https://images.adsttc.com/media/images/5d44/14fa/284d/d1fd/3a00/003d/large_jpg/eiffel-tower-in-paris-151-medium.jpg?1564742900" alt="">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+    <div ng-switch-when="london">
+        <h2 style="margin-left: 730px; color: rgb(58, 109, 116);">London</h2>
+        <h3 style="display: flex; justify-content: center; color: rgb(77, 144, 154);">Total International Visitors: 19.09 Million Visitors</h3>
+        <p style="margin-left: 100px; margin-right: 100px;">London is the capital and largest city of England and the United Kingdom, with a population of just under 9 million. It stands on the River Thames in south-east England at the head of a 50-mile (80 km) estuary down to the North Sea, and has been a major settlement for two millennia. The City of London, its ancient core and financial centre, was founded by the Romans as Londinium and retains its medieval boundaries. The City of Westminster, to the west of the City of London, has for centuries hosted the national government and parliament. Since the 19th century, the name "London" has also referred to the metropolis around this core, historically split between the counties of Middlesex, Essex, Surrey, Kent, and Hertfordshire, which since 1965 has largely comprised Greater London, which is governed by 33 local authorities and the Greater London Authority.</p>
+        <img style="border: 1px solid black; margin-left: 450px; margin-top: 20px;" width="600"src="https://www.scully.org.uk/wp-content/uploads/2019/05/London-English-1080x675.jpg" alt="">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <div ng-switch-when="dubai">
+        <h2 style="margin-left: 730px; color: rgb(58, 109, 116);">Dubai</h2>
+        <h3 style="display: flex; justify-content: center; color: rgb(77, 144, 154);">Total International Visitors: 15.93 Million Visitors</h3>
+        <p style="margin-left: 100px; margin-right: 100px;">Dubai is the most populous city in the United Arab Emirates (UAE) and the capital of the Emirate of Dubai, the most populated of the 7 emirates of the United Arab Emirates. Established in the 18th century as a small fishing village, the city grew rapidly in the early 21st century with a focus on tourism and luxury, having the second most five-star hotels in the world, and the tallest building in the world, the Burj Khalifa, which is 828 metres (2,717 ft) tall.</p>
+
+        <img style="border: 1px solid black; margin-left: 450px; margin-top: 20px;" width="600"src="https://cdn.britannica.com/69/156369-050-75E7FD08/skyline-Dubai-United-Arab-Emirates.jpg" alt="">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+
+    <div ng-switch-when="singapore">
+        <h2 style="margin-left: 730px; color: rgb(58, 109, 116);">Singapore</h2>
+        <h3 style="display: flex; justify-content: center; color: rgb(77, 144, 154);">Total International Visitors: 14.67 Million Visitors</h3>
+        <p style="margin-left: 100px; margin-right: 100px;">Singapore, officially the Republic of Singapore, is a sovereign island country and city-state in maritime Southeast Asia. It lies about one degree of latitude (137 kilometres or 85 miles) north of the equator, off the southern tip of the Malay Peninsula, bordering the Strait of Malacca to the west, the Singapore Strait to the south, the South China Sea to the east, and the Straits of Johor to the north. The country's territory is composed of one main island, 63 satellite islands and islets, and one outlying islet; the combined area of these has increased by 25% since the country's independence as a result of extensive land reclamation projects. It has the third highest population density in the world. With a multicultural population and recognising the need to respect cultural identities of the major ethnic groups within the nation, Singapore has four official languages: English, Malay, Mandarin, and Tamil. English is the lingua franca and numerous public services are available only in English. Multi-racialism is enshrined in the constitution and continues to shape national policies in education, housing, and politics.</p>
+
+        <img style="border: 1px solid black; margin-left: 450px; margin-top: 20px;" width="600"src="https://worldstrides.com/wp-content/uploads/2015/07/0001_SG-Now.jpg" alt="">
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+    </div>
+</div>
+<footer class="flex-h">
+<h1>Cities</h1>
+<div>
+<img src="img/instagram.png" alt="">
+<img src="img/telegram.png" alt="">
+<img src="img/twitter.png" alt="">
+</div>
+<h2>&copy; Valeriia</h2>
+</footer>
+</body>
+</html>
